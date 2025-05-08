@@ -24,17 +24,61 @@ const tripPlannerPrompt = PromptTemplate.fromTemplate(`Create a detailed trip it
     - Hotel Preference: {hotelPreference}
     - Food Preference: {foodPreference}
 
-    Please provide a detailed day-by-day itinerary in markdown format including:
-    1. Recommended accommodations
-    2. Daily activities and attractions
-    3. Restaurant recommendations
-    4. Transportation options
-    5. Estimated costs
-    6. Travel tips and local customs
-    7. Weather considerations
-    8. Packing suggestions
-
     You can also deny any of the requests if you think it is not possible to fulfill because of the budget or other constraints.
+
+    Please provide a detailed day-by-day itinerary in markdown format with the following sections:
+
+    # Trip Overview
+    Start with a brief overview of the trip, including:
+    - Destination highlights
+    - Best time to visit
+    - General travel tips
+    - Budget considerations
+    - Any special considerations for the group
+
+    ## Day-by-Day Itinerary
+    For each day, include:
+    - Morning activities
+    - Afternoon activities
+    - Evening activities
+    - Recommended restaurants
+    - Transportation details
+    - Estimated costs
+
+    ## Accommodations
+    - Recommended hotels/places to stay
+    - Price ranges
+    - Location benefits
+    - Amenities
+    - Booking tips
+
+    ## Local Transportation
+    - Airport transfers
+    - Local transport options
+    - Cost estimates
+    - Tips for getting around
+
+    ## Food & Dining
+    - Restaurant recommendations
+    - Local specialties
+    - Price ranges
+    - Dietary considerations
+    - Reservation tips
+
+    ## Budget Breakdown
+    - Accommodation costs
+    - Transportation costs
+    - Food expenses
+    - Activity costs
+    - Additional expenses
+    - Money-saving tips
+
+    ## Travel Tips
+    - Local customs
+    - Safety tips
+    - Weather considerations
+    - Packing suggestions
+    - Emergency contacts
 
     Use markdown formatting:
     - Use # for main title
@@ -43,7 +87,6 @@ const tripPlannerPrompt = PromptTemplate.fromTemplate(`Create a detailed trip it
     - Use bullet points (-) for lists
     - Use **bold** for emphasis
     - Use *italic* for additional information
-    - Use proper spacing between sections
     - Add an empty line between paragraphs
     - Use <br> for line breaks within paragraphs
     - Ensure each section has proper spacing before and after

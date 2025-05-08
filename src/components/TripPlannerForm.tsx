@@ -199,86 +199,114 @@ export default function TripPlannerForm() {
       )}
 
       {tripPlan && (
-        <div className="mt-8 bg-white rounded-2xl shadow-xl p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Your Trip Plan</h2>
-          <div className="prose max-w-none">
-            <Markdown
-              options={{
-                forceBlock: true,
-                forceWrapper: true,
-                wrapper: 'div',
-                overrides: {
-                  h1: {
-                    component: ({ children, ...props }) => (
-                      <h1 className="text-3xl font-bold text-gray-900 mt-8 mb-4" {...props}>
-                        {children}
-                      </h1>
-                    ),
+        <div className="mt-8 bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="p-8">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-2xl font-bold text-gray-900">Your Trip Plan</h2>
+              <div className="flex items-center space-x-2">
+                <span className="px-3 py-1 text-sm font-medium text-blue-600 bg-blue-50 rounded-full">
+                  AI Generated
+                </span>
+                <button
+                  onClick={() => window.print()}
+                  className="p-2 text-gray-500 hover:text-gray-700 transition-colors"
+                  title="Print or Save as PDF"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div className="prose max-w-none">
+              <Markdown
+                options={{
+                  forceBlock: true,
+                  forceWrapper: true,
+                  wrapper: 'div',
+                  overrides: {
+                    h1: {
+                      component: ({ children, ...props }) => (
+                        <h1 className="text-3xl font-bold text-gray-900 mt-8 mb-4" {...props}>
+                          {children}
+                        </h1>
+                      ),
+                    },
+                    h2: {
+                      component: ({ children, ...props }) => (
+                        <h2 className="text-2xl font-bold text-gray-900 mt-6 mb-3" {...props}>
+                          {children}
+                        </h2>
+                      ),
+                    },
+                    h3: {
+                      component: ({ children, ...props }) => (
+                        <h3 className="text-xl font-bold text-gray-900 mt-5 mb-2" {...props}>
+                          {children}
+                        </h3>
+                      ),
+                    },
+                    p: {
+                      component: ({ children, ...props }) => (
+                        <p className="text-gray-700 mb-6 leading-relaxed" {...props}>
+                          {children}
+                        </p>
+                      ),
+                    },
+                    ul: {
+                      component: ({ children, ...props }) => (
+                        <ul className="list-disc list-inside mb-6 text-gray-700 space-y-2" {...props}>
+                          {children}
+                        </ul>
+                      ),
+                    },
+                    ol: {
+                      component: ({ children, ...props }) => (
+                        <ol className="list-decimal list-inside mb-6 text-gray-700 space-y-2" {...props}>
+                          {children}
+                        </ol>
+                      ),
+                    },
+                    li: {
+                      component: ({ children, ...props }) => (
+                        <li className="mb-2" {...props}>
+                          {children}
+                        </li>
+                      ),
+                    },
+                    strong: {
+                      component: ({ children, ...props }) => (
+                        <strong className="font-semibold" {...props}>
+                          {children}
+                        </strong>
+                      ),
+                    },
+                    em: {
+                      component: ({ children, ...props }) => (
+                        <em className="italic" {...props}>
+                          {children}
+                        </em>
+                      ),
+                    },
+                    br: {
+                      component: () => <br className="mb-4" />,
+                    },
                   },
-                  h2: {
-                    component: ({ children, ...props }) => (
-                      <h2 className="text-2xl font-bold text-gray-900 mt-6 mb-3" {...props}>
-                        {children}
-                      </h2>
-                    ),
-                  },
-                  h3: {
-                    component: ({ children, ...props }) => (
-                      <h3 className="text-xl font-bold text-gray-900 mt-5 mb-2" {...props}>
-                        {children}
-                      </h3>
-                    ),
-                  },
-                  p: {
-                    component: ({ children, ...props }) => (
-                      <p className="text-gray-700 mb-6 leading-relaxed" {...props}>
-                        {children}
-                      </p>
-                    ),
-                  },
-                  ul: {
-                    component: ({ children, ...props }) => (
-                      <ul className="list-disc list-inside mb-6 text-gray-700 space-y-2" {...props}>
-                        {children}
-                      </ul>
-                    ),
-                  },
-                  ol: {
-                    component: ({ children, ...props }) => (
-                      <ol className="list-decimal list-inside mb-6 text-gray-700 space-y-2" {...props}>
-                        {children}
-                      </ol>
-                    ),
-                  },
-                  li: {
-                    component: ({ children, ...props }) => (
-                      <li className="mb-2" {...props}>
-                        {children}
-                      </li>
-                    ),
-                  },
-                  strong: {
-                    component: ({ children, ...props }) => (
-                      <strong className="font-semibold" {...props}>
-                        {children}
-                      </strong>
-                    ),
-                  },
-                  em: {
-                    component: ({ children, ...props }) => (
-                      <em className="italic" {...props}>
-                        {children}
-                      </em>
-                    ),
-                  },
-                  br: {
-                    component: () => <br className="mb-4" />,
-                  },
-                },
-              }}
-            >
-              {tripPlan}
-            </Markdown>
+                }}
+              >
+                {tripPlan}
+              </Markdown>
+            </div>
           </div>
         </div>
       )}
