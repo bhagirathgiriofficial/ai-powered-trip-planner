@@ -139,12 +139,19 @@ export default function TripPlannerForm() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Hotel Preference</label>
-                  <input
-                    type="text"
+                  <select
                     {...register('hotelPreference')}
                     className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                    placeholder="e.g., Luxury, Budget, Boutique"
-                  />
+                  >
+                    <option value="">Select hotel preference</option>
+                    <option value="Luxury">Luxury</option>
+                    <option value="Boutique">Boutique</option>
+                    <option value="Mid-range">Mid-range</option>
+                    <option value="Budget">Budget</option>
+                    <option value="Resort">Resort</option>
+                    <option value="Bed and Breakfast">Bed and Breakfast</option>
+                    <option value="Hostel">Hostel</option>
+                  </select>
                   {errors.hotelPreference && (
                     <p className="mt-1 text-sm text-red-600">{errors.hotelPreference.message}</p>
                   )}
@@ -158,12 +165,20 @@ export default function TripPlannerForm() {
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Food Preference</label>
-                  <input
-                    type="text"
+                  <select
                     {...register('foodPreference')}
                     className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                    placeholder="e.g., Local cuisine, Vegetarian, Fine dining"
-                  />
+                  >
+                    <option value="">Select food preference</option>
+                    <option value="Local cuisine">Local cuisine</option>
+                    <option value="Fine dining">Fine dining</option>
+                    <option value="Street food">Street food</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Seafood">Seafood</option>
+                    <option value="International">International</option>
+                    <option value="Fusion">Fusion</option>
+                  </select>
                   {errors.foodPreference && (
                     <p className="mt-1 text-sm text-red-600">{errors.foodPreference.message}</p>
                   )}
