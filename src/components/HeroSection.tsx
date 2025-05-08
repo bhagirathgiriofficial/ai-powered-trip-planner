@@ -18,7 +18,7 @@ export default function HeroSection() {
               <span className="text-blue-600">AI Magic</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Get personalized travel itineraries powered by advanced AI. From hidden gems to local favorites, we'll craft your dream vacation.
+              Get personalized travel itineraries powered by advanced AI. From hidden gems to local favorites, we&apos;ll craft your dream vacation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
