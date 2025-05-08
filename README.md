@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Trip Planner
 
-## Getting Started
+A Next.js application that uses Google's Gemini AI model through LangChain to generate personalized trip itineraries based on user preferences.
 
-First, run the development server:
+## Features
 
+- User-friendly form to input trip details
+- AI-powered trip planning
+- Detailed itineraries including:
+  - Accommodations
+  - Daily activities
+  - Restaurant recommendations
+  - Transportation options
+  - Estimated costs
+  - Travel tips
+  - Weather considerations
+  - Packing suggestions
+
+## Prerequisites
+
+- Node.js 18.x or later
+- A Google API key with access to Gemini AI
+
+## Setup
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd ai-trip-planner
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create a `.env.local` file in the root directory and add your Google API key:
+```
+GOOGLE_API_KEY=your_google_api_key_here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Start the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Fill out the trip planner form with your preferences:
+   - Departure location
+   - Destination
+   - Duration
+   - Number of travelers (adults and kids)
+   - Budget
+   - Hotel preferences
+   - Food preferences
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Click "Generate Trip Plan" to get your personalized itinerary.
 
-## Deploy on Vercel
+3. Review the generated plan, which includes detailed day-by-day recommendations.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technologies Used
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- LangChain
+- Google Gemini AI
+- React Hook Form
+- Zod (for form validation)
+
+## License
+
+MIT
+# ai-powered-trip-planner
